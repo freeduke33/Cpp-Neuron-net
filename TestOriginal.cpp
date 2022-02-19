@@ -37,8 +37,8 @@ NetOriginal::~NetOriginal()
 
 
 double NetOriginal::down(double i0, double i1) {
-	n0.Set_signal(i0);
-	n1.Set_signal(i1);
+	n0.Set_input_signal(i0);
+	n1.Set_input_signal(i1);
 
 	n0.Activ_func();
 	n1.Activ_func();
@@ -56,7 +56,7 @@ double NetOriginal::down(double i0, double i1) {
 }
 
 void NetOriginal::up(double mistake) {
-	n5.Set_mistake(mistake);
+	n5.Set_input_mistake(mistake);
 	n5.Mistake_func();
 
 	n4.Summ_signals_from_DownLinks();
@@ -110,19 +110,19 @@ TestOriginal::TestOriginal() :
 	double expected_i5 =  1 * 0.69 +  2 * 0.67  +  4 * 0.4;
 	double in;
 
-	in = net.n2.Get_signal();
+	in = net.n2.Get_input_signal();
 	std::cout <<"n2.in expected=" <<expected_i2 <<" real=" <<in <<std::endl;
 	succeed &= eq(in, expected_i2);
 
-	in = net.n3.Get_signal();
+	in = net.n3.Get_input_signal();
 	std::cout <<"n3.in expected=" <<expected_i3 <<" real=" <<in <<std::endl;
 	succeed &= eq(in, expected_i3);
 
-	in = net.n4.Get_signal();
+	in = net.n4.Get_input_signal();
 	std::cout <<"n4.in expected=" <<expected_i4 <<" real=" <<in <<std::endl;
 	succeed &= eq(in, expected_i4);
 
-	in = net.n5.Get_signal();
+	in = net.n5.Get_input_signal();
 	std::cout <<"n5.in expected=" <<expected_i5 <<" real=" <<in <<std::endl;
 	succeed &= eq(in, expected_i5);
 

@@ -26,20 +26,16 @@ Neuron::Neuron() {
 
 // - - - - - -
 
-double Neuron::Get_signal() {
-    return signal;
-}
-
-void Neuron::Set_signal(double new_signal) {
-    signal = new_signal;
-}
-
 double Neuron::Set_input_signal(double input) {
     return input_signal = input;
 }
 
+double Neuron::Get_input_signal() {
+    return input_signal;
+}
+
 double Neuron::Activ_func() {
-    return output_signal = Active_func_vard(signal);
+    return output_signal = Active_func_vard(input_signal);
 }
 
 double Neuron::Get_output_signal() {
@@ -47,10 +43,10 @@ double Neuron::Get_output_signal() {
 }
 
 void Neuron::Summ_signals_from_UpLinks() {
-	signal = 0;
+	input_signal = 0;
     for (int i = 0; i < Up_links.size(); i++) {
         double signal_from_uplink = Up_links[i]->Activate_link_Ner2Ner();
-        signal = signal + signal_from_uplink;
+        input_signal = input_signal + signal_from_uplink;
     }
 }
 
@@ -60,16 +56,8 @@ void Neuron::add_up_link(Link& up_link) {
 
 // - - - - - -
 
-double Neuron::Get_mistake() {
-    return mistake;
-}
-
-void Neuron::Set_mistake(double new_mistake) {
-    mistake = new_mistake;
-}
-
 double Neuron::Mistake_func() {
-    output_mistake = Active_func_vard(mistake)*(1 - Active_func_vard(mistake));
+    output_mistake = Active_func_vard(input_mistake)*(1 - Active_func_vard(input_mistake));
     return output_mistake;
 }
 
@@ -77,15 +65,19 @@ double Neuron::Set_input_mistake(double input) {
     return input_mistake = input;
 }
 
+double Neuron::Get_input_mistake() {
+    return input_mistake;
+}
+
 double Neuron::Get_output_mistake() {
     return output_mistake;
 }
 
 void Neuron::Summ_signals_from_DownLinks() {
-    mistake = 0;
+    input_mistake = 0;
     for (int i = 0; i < Down_links.size(); i++) {
         double mistake_from_downlink = Down_links[i]->Disactivate_link_Ner2Ner();
-        mistake = mistake + mistake_from_downlink;
+        input_mistake = input_mistake + mistake_from_downlink;
     }
 }
 

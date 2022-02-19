@@ -18,7 +18,7 @@ void TEST_1_neuron() {
     Neuron ner;
     double signal = 0.3;
 
-    ner.Set_signal(signal);
+    ner.Set_input_signal(signal);
     ner.Activ_func();
     cout << ner.Get_output_signal() << endl;
 }
@@ -29,7 +29,7 @@ void TEST_1__2_neuron() {
     Neuron ner;
     double signal = 0;
 
-    ner.Set_signal(signal);
+    ner.Set_input_signal(signal);
     ner.Activ_func();
 
     cout << ner.Activ_func() << endl;
@@ -44,7 +44,7 @@ void TEST_2_neuron() {
     Neuron ner;
     double signal = 0.3;
 
-    ner.Set_mistake(signal);
+    ner.Set_input_mistake(signal);
     ner.Mistake_func();
     cout << ner.Get_output_mistake() << endl;
 }
@@ -56,11 +56,11 @@ void TEST_3_neuron() {
     Link link(ner1, ner2);
     link.Set_weight(0.3);
 
-    ner1.Set_signal(signal);
+    ner1.Set_input_signal(signal);
     ner1.Activ_func();
     cout << ner1.Get_output_signal() << endl;
     ner2.Summ_signals_from_UpLinks();
-    cout << ner2.Get_signal() << endl;
+    cout << ner2.Get_input_signal() << endl;
     ner2.Activ_func();
     cout << ner2.Get_output_signal() << endl;
 }
@@ -75,7 +75,7 @@ void TEST_4_neuron() {
     Link link(ner1, ner2);
     link.Set_weight(0.3);
 
-    ner1.Set_signal(signal);
+    ner1.Set_input_signal(signal);
     ner1.Activ_func();
     ner2.Summ_signals_from_UpLinks();
     ner2.Activ_func();
@@ -83,7 +83,7 @@ void TEST_4_neuron() {
     cout << link.Get_weight() << endl;
 
     result = ner2.Get_output_signal();
-    ner2.Set_mistake(predicted_result - result);
+    ner2.Set_input_mistake(predicted_result - result);
     ner2.Mistake_func();
     ner1.Summ_signals_from_DownLinks();
     link.Set_weight(link.Get_weight() + Edict_norm * ner1.Get_output_signal() * result);
@@ -98,8 +98,8 @@ void TEST_4__2_neuron() {
 
     Neuron ner;
 
-    ner.Set_mistake(signal);
-    cout << ner.Get_mistake() << endl;
+    ner.Set_input_mistake(signal);
+    cout << ner.Get_input_mistake() << endl;
     ner.Mistake_func();
     cout << ner.Get_output_mistake() << endl;
     cout << "- - - - -" << endl;
