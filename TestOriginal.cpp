@@ -159,19 +159,19 @@ TestOriginal::TestOriginal() :
 	if (!succeed) {
 		std::cout <<"TestOriginal: up" <<std::endl;
 		double good_out = 0.4;
-		net.up(good_out - out);
+		net.up(good_out - expected_out);
 		net.dump();
 		double expected_w02 = -1 + 0.2 * (-0.0029) * 0.85;
 		double expected_w03 =  1 + 0.2 * (-0.0061) * 0.85;
-		double expected_w04 =  1 + 0.2 * (-0.0134) * 0.85;
+		double expected_w04 =  3 + 0.2 * (-0.0134) * 0.85;
 
-		double expected_w12 =  1 + 0.5 * (-0.0029) * 0.85;
+		double expected_w12 =  2 + 0.5 * (-0.0029) * 0.85;
 		double expected_w13 =  1 + 0.5 * (-0.0061) * 0.85;
-		double expected_w14 =  1 + 0.5 * (-0.0134) * 0.85;
+		double expected_w14 = -2 + 0.5 * (-0.0134) * 0.85;
 
 		double expected_w25 =  1 + 0.69 * (-0.0014) * 0.85;
-		double expected_w35 =  1 + 0.67 * (-0.0014) * 0.85;
-		double expected_w45 =  1 + 0.40 * (-0.0014) * 0.85;
+		double expected_w35 =  2 + 0.67 * (-0.0014) * 0.85;
+		double expected_w45 =  4 + 0.40 * (-0.0014) * 0.85;
 
 		double w;
 		// 0x
