@@ -7,8 +7,8 @@
 
 using namespace std;
 
-Link::Link(Neuron& new_input_Neuron, Neuron& new_output_Neuron, double new_learning_rate) :
-    weight(0),
+Link::Link(Neuron& new_input_Neuron, Neuron& new_output_Neuron, double new_weight, double new_learning_rate) :
+    weight(new_weight),
 	learning_rate(new_learning_rate),
     input_signal(0),
     output_signal(0),
@@ -27,7 +27,7 @@ void Link::Update_weight() {
 		<<std::endl;
 }
 
-void Link::Set_weight(double new_weight) {
+void Link::Set_weight_testonly(double new_weight) {
     weight = new_weight;
 }
 

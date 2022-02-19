@@ -17,9 +17,9 @@ private:
     double Pass_through_link(double input_val);
 
 public:
-    Link(Neuron&, Neuron&, double learning_rate);
+    Link(Neuron&, Neuron&, double weight, double learning_rate);
 
-    void Set_weight(double);
+    void Set_weight_testonly(double weight);
 
     void Update_weight();
 

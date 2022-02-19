@@ -9,27 +9,16 @@
 
 NetOriginal::NetOriginal() :
 		learn_norm(0.85),
-		l02(n0, n2, learn_norm),
-		l03(n0, n3, learn_norm),
-		l04(n0, n4, learn_norm),
-		l12(n1, n2, learn_norm),
-		l13(n1, n3, learn_norm),
-		l14(n1, n4, learn_norm),
-		l25(n2, n5, learn_norm),
-		l35(n3, n5, learn_norm),
-		l45(n4, n5, learn_norm)
+		l02(n0, n2, -1, learn_norm),
+		l03(n0, n3,  1, learn_norm),
+		l04(n0, n4,  3, learn_norm),
+		l12(n1, n2,  2, learn_norm),
+		l13(n1, n3,  1, learn_norm),
+		l14(n1, n4, -2, learn_norm),
+		l25(n2, n5,  1, learn_norm),
+		l35(n3, n5,  2, learn_norm),
+		l45(n4, n5,  4, learn_norm)
 {
-	l02.Set_weight(-1);
-	l03.Set_weight(1);
-	l04.Set_weight(3);
-
-	l12.Set_weight(2);
-	l13.Set_weight(1);
-	l14.Set_weight(-2);
-
-	l25.Set_weight(1);
-	l35.Set_weight(2);
-	l45.Set_weight(4);
 }
 
 NetOriginal::~NetOriginal()
