@@ -123,8 +123,8 @@ TestOriginal::TestOriginal() :
 	std::cout <<"n5.in expected=" <<expected_i5 <<" real=" <<in <<std::endl;
 	succeed &= eq(in, expected_i5);
 
-	double expected_o0 = 1.0 / ( 1.0 + exp(-0.2));
-	double expected_o1 = 1.0 / ( 1.0 + exp(-0.5));
+	double expected_o0 = 0.2;
+	double expected_o1 = 0.5;
 	double expected_o2 = 0.69;
 	double expected_o3 = 0.67;
 	double expected_o4 = 0.40;
