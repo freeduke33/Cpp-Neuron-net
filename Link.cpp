@@ -38,7 +38,7 @@ Link::Link(Neuron& new_input_Neuron, Neuron& new_output_Neuron) :
     ptr_output_Neuron.add_up_link(*this);
 }
 
-void Link::set_weight(double new_weight) {
+void Link::Set_weight(double new_weight) {
     weight = new_weight;
 }
 

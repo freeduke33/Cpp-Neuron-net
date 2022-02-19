@@ -18,17 +18,17 @@ NetOriginal::NetOriginal() :
 		l35(n3, n5),
 		l45(n4, n5)
 {
-	l02.set_weight(-1);
-	l03.set_weight(1);
-	l04.set_weight(3);
+	l02.Set_weight(-1);
+	l03.Set_weight(1);
+	l04.Set_weight(3);
 
-	l12.set_weight(2);
-	l13.set_weight(1);
-	l14.set_weight(-2);
+	l12.Set_weight(2);
+	l13.Set_weight(1);
+	l14.Set_weight(-2);
 
-	l25.set_weight(1);
-	l35.set_weight(2);
-	l45.set_weight(4);
+	l25.Set_weight(1);
+	l35.Set_weight(2);
+	l45.Set_weight(4);
 }
 
 NetOriginal::~NetOriginal()

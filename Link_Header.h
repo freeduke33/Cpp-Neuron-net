@@ -16,7 +16,7 @@ private:
 public:
     //Link(Neuron&, Neuron&);
 
-    //void set_weight(double);
+    //void Set_weight(double);
 
     //double get_signal_to_end();
 
@@ -25,7 +25,7 @@ public:
     // - - - - - - - - - - - - -
     Link(Neuron&, Neuron&);
 
-    void set_weight(double);
+    void Set_weight(double);
 
     double Get_weight();
 

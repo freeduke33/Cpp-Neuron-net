@@ -54,7 +54,7 @@ void TEST_3_neuron() {
 
     Neuron ner1, ner2;
     Link link(ner1, ner2);
-    link.set_weight(0.3);
+    link.Set_weight(0.3);
 
     ner1.Set_signal(signal);
     ner1.Activ_func();
@@ -73,7 +73,7 @@ void TEST_4_neuron() {
 
     Neuron ner1, ner2;
     Link link(ner1, ner2);
-    link.set_weight(0.3);
+    link.Set_weight(0.3);
 
     ner1.Set_signal(signal);
     ner1.Activ_func();
@@ -86,7 +86,7 @@ void TEST_4_neuron() {
     ner2.Set_mistake(predicted_result - result);
     ner2.Mistake_func();
     ner1.Summ_signals_from_DownLinks();
-    link.set_weight(link.Get_weight() + Edict_norm * ner1.Get_output_signal() * result);
+    link.Set_weight(link.Get_weight() + Edict_norm * ner1.Get_output_signal() * result);
     ner1.Mistake_func();
 
     cout << link.Get_weight() << endl;
