@@ -8,15 +8,16 @@
 // https://microtechnics.ru/obuchenie-nejronnoj-seti-algoritm-obratnogo-rasprostraneniya-oshibok/
 
 NetOriginal::NetOriginal() :
-		l02(n0, n2),
-		l03(n0, n3),
-		l04(n0, n4),
-		l12(n1, n2),
-		l13(n1, n3),
-		l14(n1, n4),
-		l25(n2, n5),
-		l35(n3, n5),
-		l45(n4, n5)
+		learn_norm(0.85),
+		l02(n0, n2, learn_norm),
+		l03(n0, n3, learn_norm),
+		l04(n0, n4, learn_norm),
+		l12(n1, n2, learn_norm),
+		l13(n1, n3, learn_norm),
+		l14(n1, n4, learn_norm),
+		l25(n2, n5, learn_norm),
+		l35(n3, n5, learn_norm),
+		l45(n4, n5, learn_norm)
 {
 	l02.Set_weight(-1);
 	l03.Set_weight(1);
@@ -69,17 +70,17 @@ void NetOriginal::up(double mistake) {
 	n0.Mistake_func();
 
 	// necessary but missed step/method
-	//l25.update_weight();
-	//l35.update_weight();
-	//l45.update_weight();
+	l25.Update_weight();
+	l35.Update_weight();
+	l45.Update_weight();
 
-	//l12.update_weight();
-	//l13.update_weight();
-	//l14.update_weight();
+	l12.Update_weight();
+	l13.Update_weight();
+	l14.Update_weight();
 
-	//l02.update_weight();
-	//l03.update_weight();
-	//l04.update_weight();
+	l02.Update_weight();
+	l03.Update_weight();
+	l04.Update_weight();
 }
 
 void NetOriginal::dump() {

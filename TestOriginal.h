@@ -15,7 +15,9 @@ public:
 
 	void dump();
 
-// private:
+private:
+    double learn_norm;
+
 public:
 	Neuron n0, n1, n2, n3, n4, n5;
 

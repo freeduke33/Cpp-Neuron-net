@@ -7,14 +7,24 @@
 
 using namespace std;
 
-Link::Link(Neuron& new_input_Neuron, Neuron& new_output_Neuron) :
+Link::Link(Neuron& new_input_Neuron, Neuron& new_output_Neuron, double new_learning_rate) :
     weight(0),
+	learning_rate(new_learning_rate),
     input_signal(0),
     output_signal(0),
     ptr_input_Neuron(new_input_Neuron),
     ptr_output_Neuron(new_output_Neuron) {
     ptr_input_Neuron.add_down_link(*this);
     ptr_output_Neuron.add_up_link(*this);
+}
+
+void Link::Update_weight() {
+    weight += ptr_input_Neuron.Get_output_signal() * ptr_output_Neuron.Get_output_mistake() * learning_rate;
+    std::cout <<"link: weight=" <<weight
+		<<" up_signal=" <<ptr_input_Neuron.Get_output_signal()
+		<<" down_mistake=" <<ptr_output_Neuron.Get_output_mistake()
+		<<" rate=" <<learning_rate
+		<<std::endl;
 }
 
 void Link::Set_weight(double new_weight) {

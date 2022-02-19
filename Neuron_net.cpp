@@ -53,7 +53,7 @@ void TEST_3_neuron() {
     double signal = 0.9;
 
     Neuron ner1, ner2;
-    Link link(ner1, ner2);
+    Link link(ner1, ner2, 0.85);
     link.Set_weight(0.3);
 
     ner1.Set_input_signal_testonly(signal);
@@ -72,7 +72,7 @@ void TEST_4_neuron() {
     double result;
 
     Neuron ner1, ner2;
-    Link link(ner1, ner2);
+    Link link(ner1, ner2, 0.85);
     link.Set_weight(0.3);
 
     ner1.Set_input_signal_testonly(signal);

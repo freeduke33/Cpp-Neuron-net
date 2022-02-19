@@ -7,7 +7,7 @@ class Link
 {
 private:
     double weight; // signal = weight * input
-
+	double learning_rate;
     double input_signal;
     double output_signal;
 
@@ -17,9 +17,11 @@ private:
     double Pass_through_link(double input_val);
 
 public:
-    Link(Neuron&, Neuron&);
+    Link(Neuron&, Neuron&, double learning_rate);
 
     void Set_weight(double);
+
+    void Update_weight();
 
     double Get_weight();
 
