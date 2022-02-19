@@ -10,6 +10,7 @@ using namespace std;
 double Neuron::Active_func_vard(double input) {
     double ret = 1.0 / (1.0 + exp(-input));
 	std::cout <<"active: ret=" <<ret <<" inp=" <<input << std::endl;
+	return ret;
 }
 
 // - - - - - -
