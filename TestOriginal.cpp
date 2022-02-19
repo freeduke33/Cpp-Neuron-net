@@ -156,7 +156,7 @@ TestOriginal::TestOriginal() :
 	std::cout <<"n4.out expected=" <<expected_o4 <<" real=" <<out <<std::endl;
 	succeed &= eq(out, expected_o4);
 
-	if (!succeed) {
+	if (succeed) {
 		std::cout <<"TestOriginal: up" <<std::endl;
 		double good_out = 0.4;
 		net.up(good_out - expected_out);
