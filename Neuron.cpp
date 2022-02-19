@@ -62,7 +62,7 @@ void Neuron::add_up_link(Link& up_link) {
 // - - - - - -
 
 double Neuron::Mistake_func() {
-    output_mistake = Active_func_vard(input_mistake)*(1 - Active_func_vard(input_mistake));
+    output_mistake = input_mistake * Active_func_vard(input_signal)*(1 - Active_func_vard(input_signal));
 	std::cout <<"output_mistake=" <<output_mistake <<" input_mistake=" <<input_mistake <<" input_signal=" <<input_signal <<std::endl;
     return output_mistake;
 }
