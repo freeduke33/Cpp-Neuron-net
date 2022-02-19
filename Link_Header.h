@@ -10,19 +10,10 @@ private:
     double input_signal;
     double output_signal;
 
-    Neuron& ptr_input_Neuron; // ссылка на отправлающий нейрон
-    Neuron& ptr_output_Neuron; // ссылка на принимающий нейрон
+    Neuron& ptr_input_Neuron; // Г±Г±Г»Г«ГЄГ  Г­Г  Г®ГІГЇГ°Г ГўГ«Г ГѕГ№ГЁГ© Г­ГҐГ©Г°Г®Г­
+    Neuron& ptr_output_Neuron; // Г±Г±Г»Г«ГЄГ  Г­Г  ГЇГ°ГЁГ­ГЁГ¬Г ГѕГ№ГЁГ© Г­ГҐГ©Г°Г®Г­
 
 public:
-    //Link(Neuron&, Neuron&);
-
-    //void Set_weight(double);
-
-    //double get_signal_to_end();
-
-    //double get_signal_to_beg();
-
-    // - - - - - - - - - - - - -
     Link(Neuron&, Neuron&);
 
     void Set_weight(double);
@@ -43,11 +34,11 @@ public:
 
     void Generate_output_signal();
 
-    void Activate_link_Ner2Ner();
+    double Activate_link_Ner2Ner();
 
-    void Disactivate_link_Ner2Ner();
+    double Disactivate_link_Ner2Ner();
 
-    void Activate_link_Input2Ner(double new_input_signal);
+    double Activate_link_Input2Ner(double new_input_signal);
 
     double Disactivate_link_Input2Ner();
 };

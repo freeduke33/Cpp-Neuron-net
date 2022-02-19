@@ -49,8 +49,8 @@ double Neuron::Get_output_signal() {
 void Neuron::Summ_signals_from_UpLinks() {
 	signal = 0;
     for (int i = 0; i < Up_links.size(); i++) {
-        Up_links[i]->Activate_link_Ner2Ner();
-        signal = signal + input_signal;
+        double signal_from_uplink = Up_links[i]->Activate_link_Ner2Ner();
+        signal = signal + signal_from_uplink;
     }
 }
 
@@ -84,8 +84,8 @@ double Neuron::Get_output_mistake() {
 void Neuron::Summ_signals_from_DownLinks() {
     mistake = 0;
     for (int i = 0; i < Down_links.size(); i++) {
-        Down_links[i]->Disactivate_link_Ner2Ner();
-        mistake = mistake + input_mistake;
+        double mistake_from_downlink = Down_links[i]->Disactivate_link_Ner2Ner();
+        mistake = mistake + mistake_from_downlink;
     }
 }
 

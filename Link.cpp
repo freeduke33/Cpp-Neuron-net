@@ -74,22 +74,22 @@ void Link::Generate_output_signal() {
     output_signal = input_signal * weight;
 }
 
-void Link::Activate_link_Ner2Ner() {
+double Link::Activate_link_Ner2Ner() {
     Set_input_signal(ptr_input_Neuron.Get_output_signal());
     Generate_output_signal();
-    ptr_output_Neuron.Set_input_signal(Link::Get_output_signal());
+    return Get_output_signal();
 }
 
-void Link::Disactivate_link_Ner2Ner() {
+double Link::Disactivate_link_Ner2Ner() {
     Set_input_signal(ptr_output_Neuron.Get_output_mistake());
     Generate_output_signal();
-    ptr_input_Neuron.Set_input_mistake(Link::Get_output_signal());
+    return Get_output_signal();
 }
 
-void Link::Activate_link_Input2Ner(double new_input_signal) {
+double Link::Activate_link_Input2Ner(double new_input_signal) {
     Set_input_signal(new_input_signal);
     Generate_output_signal();
-    ptr_output_Neuron.Set_input_signal(Link::Get_output_signal());
+    return Get_output_signal();
 }
 
 double Link::Disactivate_link_Input2Ner() {
