@@ -33,9 +33,9 @@ public:
 
     double Get_output_signal();
 
-    double Activate_link_Ner2Ner();
+    double Calc_output_signal();
 
-    double Disactivate_link_Ner2Ner();
+    double Calc_mistake();
 };
 
 #endif

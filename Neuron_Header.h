@@ -49,7 +49,7 @@ public:
 
     double Mistake_func();
 
-    void Summ_signals_from_DownLinks();
+    void Summ_mistake_from_DownLinks();
 
     void add_down_link(Link&);
 

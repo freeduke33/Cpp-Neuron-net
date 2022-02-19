@@ -85,7 +85,7 @@ void TEST_4_neuron() {
     result = ner2.Get_output_signal();
     ner2.Set_input_mistake(predicted_result - result);
     ner2.Mistake_func();
-    ner1.Summ_signals_from_DownLinks();
+    ner1.Summ_mistake_from_DownLinks();
     link.Set_weight(link.Get_weight() + Edict_norm * ner1.Get_output_signal() * result);
     ner1.Mistake_func();
 

@@ -59,20 +59,20 @@ void NetOriginal::up(double mistake) {
 	n5.Mistake_func();
 
 	std::cout <<"---- n4" <<std::endl;
-	n4.Summ_signals_from_DownLinks();
+	n4.Summ_mistake_from_DownLinks();
 	n4.Mistake_func();
 	std::cout <<"---- n3" <<std::endl;
-	n3.Summ_signals_from_DownLinks();
+	n3.Summ_mistake_from_DownLinks();
 	n3.Mistake_func();
 	std::cout <<"---- n2" <<std::endl;
-	n2.Summ_signals_from_DownLinks();
+	n2.Summ_mistake_from_DownLinks();
 	n2.Mistake_func();
 
 	std::cout <<"---- n1" <<std::endl;
-	n1.Summ_signals_from_DownLinks();
+	n1.Summ_mistake_from_DownLinks();
 	n1.Mistake_func();
 	std::cout <<"---- n0" <<std::endl;
-	n0.Summ_signals_from_DownLinks();
+	n0.Summ_mistake_from_DownLinks();
 	n0.Mistake_func();
 
 	// necessary but missed step/method
