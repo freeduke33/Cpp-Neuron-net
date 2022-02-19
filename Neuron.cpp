@@ -27,8 +27,12 @@ Neuron::Neuron() {
 
 // - - - - - -
 
-double Neuron::Set_input_signal(double input) {
-    return input_signal = input;
+void Neuron::Set_input_signal_testonly(double signal) {
+    input_signal = signal;
+}
+
+void Neuron::Set_output_signal(double new_output_signal) {
+    output_signal = new_output_signal;
 }
 
 double Neuron::Get_input_signal() {

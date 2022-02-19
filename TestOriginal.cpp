@@ -37,11 +37,8 @@ NetOriginal::~NetOriginal()
 
 
 double NetOriginal::down(double i0, double i1) {
-	n0.Set_input_signal(i0);
-	n1.Set_input_signal(i1);
-
-	n0.Activ_func();
-	n1.Activ_func();
+	n0.Set_output_signal(i0);
+	n1.Set_output_signal(i1);
 
 	n2.Summ_signals_from_UpLinks();
 	n2.Activ_func();

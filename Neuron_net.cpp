@@ -15,10 +15,10 @@
 using namespace std;
 
 void TEST_1_neuron() {
-    Neuron ner;
+    Neuron ner, ner0;
     double signal = 0.3;
 
-    ner.Set_input_signal(signal);
+    ner0.Set_input_signal_testonly(signal);
     ner.Activ_func();
     cout << ner.Get_output_signal() << endl;
 }
@@ -29,7 +29,7 @@ void TEST_1__2_neuron() {
     Neuron ner;
     double signal = 0;
 
-    ner.Set_input_signal(signal);
+    ner.Set_input_signal_testonly(signal);
     ner.Activ_func();
 
     cout << ner.Activ_func() << endl;
@@ -56,7 +56,7 @@ void TEST_3_neuron() {
     Link link(ner1, ner2);
     link.Set_weight(0.3);
 
-    ner1.Set_input_signal(signal);
+    ner1.Set_input_signal_testonly(signal);
     ner1.Activ_func();
     cout << ner1.Get_output_signal() << endl;
     ner2.Summ_signals_from_UpLinks();
@@ -75,7 +75,7 @@ void TEST_4_neuron() {
     Link link(ner1, ner2);
     link.Set_weight(0.3);
 
-    ner1.Set_input_signal(signal);
+    ner1.Set_input_signal_testonly(signal);
     ner1.Activ_func();
     ner2.Summ_signals_from_UpLinks();
     ner2.Activ_func();

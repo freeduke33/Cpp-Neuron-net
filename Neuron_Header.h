@@ -25,7 +25,9 @@ public:
 
     // phase 1 (from beg to end)
 
-    double Set_input_signal(double input);
+    void Set_input_signal_testonly(double signal);
+
+    void Set_output_signal(double output_signal);
 
     double Get_input_signal();
 
