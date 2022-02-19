@@ -43,24 +43,12 @@ double NetOriginal::down(double i0, double i1) {
 	n0.Activ_func();
 	n1.Activ_func();
 
-	l02.Activate_link_Ner2Ner();
-	l03.Activate_link_Ner2Ner();
-	l04.Activate_link_Ner2Ner();
-
-	l12.Activate_link_Ner2Ner();
-	l13.Activate_link_Ner2Ner();
-	l14.Activate_link_Ner2Ner();
-
 	n2.Summ_signals_from_UpLinks();
 	n2.Activ_func();
 	n3.Summ_signals_from_UpLinks();
 	n3.Activ_func();
 	n4.Summ_signals_from_UpLinks();
 	n4.Activ_func();
-
-	l25.Activate_link_Ner2Ner();
-	l35.Activate_link_Ner2Ner();
-	l45.Activate_link_Ner2Ner();
 
 	n5.Summ_signals_from_UpLinks();
 	n5.Activ_func();
@@ -78,11 +66,10 @@ void NetOriginal::up(double mistake) {
 	n2.Summ_signals_from_DownLinks();
 	n2.Mistake_func();
 
-	// no necessity
-	//n1.Summ_signals_from_DownLinks();
-	//n1.Mistake_func();
-	//n0.Summ_signals_from_DownLinks();
-	//n0.Mistake_func();
+	n1.Summ_signals_from_DownLinks();
+	n1.Mistake_func();
+	n0.Summ_signals_from_DownLinks();
+	n0.Mistake_func();
 
 	// necessary but missed step/method
 	//l25.update_weight();
