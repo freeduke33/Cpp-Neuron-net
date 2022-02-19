@@ -14,7 +14,7 @@ private:
     Neuron& ptr_input_Neuron; // ññûëêà íà îòïðàâëàþùèé íåéðîí
     Neuron& ptr_output_Neuron; // ññûëêà íà ïðèíèìàþùèé íåéðîí
 
-    double Generate_signal(double input_signal);
+    double Pass_through_link(double input_val);
 
 public:
     Link(Neuron&, Neuron&);

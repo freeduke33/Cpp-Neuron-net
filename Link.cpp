@@ -41,18 +41,20 @@ void Link::Set_output_neuron(Neuron& new_output_neuron) {
     ptr_output_Neuron = new_output_neuron;
 }
 
-double Link::Generate_signal(double signal) {
-    return signal * weight;
+double Link::Pass_through_link(double input_val) {
+    double output_val = input_val * weight;
+    std::cout <<"link: out=" <<output_val <<" inp=" <<input_val << std::endl;
+    return output_val;
 }
 
 double Link::Activate_link_Ner2Ner() {
     double neuron_signal = ptr_input_Neuron.Get_output_signal();
-    output_signal = Generate_signal(neuron_signal);
+    output_signal = Pass_through_link(neuron_signal);
     return Get_output_signal();
 }
 
 double Link::Disactivate_link_Ner2Ner() {
     double neuron_mistake = ptr_output_Neuron.Get_output_mistake();
-    input_signal = Generate_signal(neuron_mistake);
+    input_signal = Pass_through_link(neuron_mistake);
     return Get_input_signal();
 }
