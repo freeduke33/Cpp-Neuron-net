@@ -47,6 +47,7 @@ double Neuron::Get_output_signal() {
 }
 
 void Neuron::Summ_signals_from_UpLinks() {
+	signal = 0;
     for (int i = 0; i < Up_links.size(); i++) {
         Up_links[i]->Activate_link_Ner2Ner();
         signal = signal + input_signal;
