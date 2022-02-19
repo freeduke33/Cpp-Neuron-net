@@ -63,6 +63,7 @@ void Neuron::add_up_link(Link& up_link) {
 
 double Neuron::Mistake_func() {
     output_mistake = Active_func_vard(input_mistake)*(1 - Active_func_vard(input_mistake));
+	std::cout <<"output_mistake=" <<output_mistake <<" input_mistake=" <<input_mistake <<" input_signal=" <<input_signal <<std::endl;
     return output_mistake;
 }
 
@@ -83,6 +84,7 @@ void Neuron::Summ_signals_from_DownLinks() {
     for (int i = 0; i < Down_links.size(); i++) {
         double mistake_from_downlink = Down_links[i]->Disactivate_link_Ner2Ner();
         input_mistake = input_mistake + mistake_from_downlink;
+        std::cout <<"sum: input_mistake=" <<input_mistake <<" mistake_from_downlink=" <<mistake_from_downlink << std::endl;
     }
 }
 

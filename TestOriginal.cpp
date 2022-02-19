@@ -54,18 +54,24 @@ double NetOriginal::down(double i0, double i1) {
 }
 
 void NetOriginal::up(double mistake) {
+	std::cout <<"---- n5" <<std::endl;
 	n5.Set_input_mistake(mistake);
 	n5.Mistake_func();
 
+	std::cout <<"---- n4" <<std::endl;
 	n4.Summ_signals_from_DownLinks();
 	n4.Mistake_func();
+	std::cout <<"---- n3" <<std::endl;
 	n3.Summ_signals_from_DownLinks();
 	n3.Mistake_func();
+	std::cout <<"---- n2" <<std::endl;
 	n2.Summ_signals_from_DownLinks();
 	n2.Mistake_func();
 
+	std::cout <<"---- n1" <<std::endl;
 	n1.Summ_signals_from_DownLinks();
 	n1.Mistake_func();
+	std::cout <<"---- n0" <<std::endl;
 	n0.Summ_signals_from_DownLinks();
 	n0.Mistake_func();
 
@@ -95,7 +101,7 @@ bool eq(double v1, double v2) {
 TestOriginal::TestOriginal() :
 	succeed(true)
 {
-	std::cout <<"TestOriginal:" <<std::endl;
+	std::cout <<"TestOriginal: down" <<std::endl;
 
 	double out = net.down(0.2, 0.5);
 	double expected_out = 0.974;
@@ -151,6 +157,7 @@ TestOriginal::TestOriginal() :
 	succeed &= eq(out, expected_o4);
 
 	if (!succeed) {
+		std::cout <<"TestOriginal: up" <<std::endl;
 		double good_out = 0.4;
 		net.up(good_out - out);
 		net.dump();

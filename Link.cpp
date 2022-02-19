@@ -53,7 +53,7 @@ void Link::Set_output_neuron(Neuron& new_output_neuron) {
 
 double Link::Pass_through_link(double input_val) {
     double output_val = input_val * weight;
-    std::cout <<"link: out=" <<output_val <<" inp=" <<input_val << std::endl;
+    std::cout <<"link: out=" <<output_val <<" inp=" <<input_val <<" w=" <<weight <<std::endl;
     return output_val;
 }
 
