@@ -8,6 +8,7 @@
 #include "Neuron_Header.h"
 #include "Link_Header.h"
 #include "TestOriginal.h"
+#include "TestOriginalSecond.h"
 
 #include <fstream>
 #include <sstream> // getline need it :{
@@ -131,6 +132,9 @@ extern "C" int main()
 
 	TestOriginal t;
 	std::cout <<"TestOriginal: "  <<okOrFailed( t.isOk() ) <<std::endl;
+
+	TestOriginalSecond t2;
+	std::cout <<"TestOriginalSecond: "  <<okOrFailed( t2.isOk() ) <<std::endl;
 
     cout << "done";
     return 0;

@@ -94,7 +94,7 @@ void NetOriginal::dump() {
 }
 
 
-bool eq(double v1, double v2) {
+static bool eq(double v1, double v2) {
 	return fabs(v1) - fabs(v2) < 0.01;
 }
 
